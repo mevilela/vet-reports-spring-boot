@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports List</title>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1 text-light">Welcome, doctor!</span>
+        </div>
+    </nav>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<h2 class="text-center text-light">Vets List</h2>
+<style>
+    body {
+        background-color: #4F4F4F
+    }
+    .navbar {
+        background-color: #363636 !important;
+    }
+
+</style>
+
+<table class="table table-dark table-hover">
+    <thead>
+    <tr>
+        <!-- Colunas da tabela -->
+        <th>ID</th>
+        <th>Name</th>
+        <th>CRMV</th>
+        <th></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iteração sobre a lista de entidades -->
+    <tr th:each="vet : ${vets}">
+        <!-- Células da tabela -->
+        <td th:text="${vet.id}"></td>
+        <td th:text="${vet.fullName}"></td>
+        <td th:text="${vet.crmv}"></td>
+        <td>
+            <form th:action="@{/vets/{id}(id=${vet.id})}" method="post">
+                <input type="hidden" name="_method" value="delete"/>
+                <button type="submit" class="btn btn-danger" style="margin-top: 5px;">Delete</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a class="btn btn-secondary" th:href="@{/clients/list}" >Clients</a>
+<a class="btn btn-secondary" th:href="@{/animals/list}" >Animals</a>
+<a class="btn btn-secondary" th:href="@{/reports/list}" >Reports</a>
+<a class="btn btn-primary" th:href="@{/vets/create}">Create new vet</a>
+</body>
+</html>
