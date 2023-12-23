@@ -22,6 +22,7 @@ public class Report implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "vet_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Vet vet;
 
     @ManyToOne

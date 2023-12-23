@@ -15,7 +15,7 @@ public class Vet {
 
     private Integer crmv;
 
-    @OneToMany(mappedBy = "vet", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "vet", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Report> reports;
 
     public Vet(){

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+<header class="p-3 text-bg-dark">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img class="bi me-2" width="60" height="60" role="img" aria-label="Bootstrap"
+                     src="https://pradomed.com.br/wp-content/uploads/2016/05/ultrassom.png" alt="Descriptive Alt Text">
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
+                <li><a th:href="@{/vets/list}" class="nav-link px-2 text-white">Vets</a></li>
+                <li><a th:href="@{/clients/list}" class="nav-link px-2 text-white">Clients</a></li>
+                <li><a th:href="@{/animals/list}" class="nav-link px-2 text-white">Animals</a></li>
+                <li><a th:href="@{/reports/list}" class="nav-link px-2 text-white">Reports</a></li>
+            </ul>
+
+        </div>
+    </div>
+</header>
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <img class="bi mt-4 mb-3" width="100" height="100" role="img" aria-label="Bootstrap"
+             src="https://pradomed.com.br/wp-content/uploads/2016/05/ultrassom.png" alt="Descriptive Alt Text">
+        <h1 class="text-body-emphasis">Welcome to the Vet Reports</h1>
+        <p class="col-lg-8 mx-auto fs-5 text-muted">
+            Empowering Pet Health with Vet Reports: Your Partner in Veterinary Excellence
+        </p>
+        <div class="d-inline-flex gap-2 mb-5">
+            <a th:href="@{/animals/list}"
+                    class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+                View Animals
+                <i class="bi-heart-fill" style="font-size: 2rem; margin-left: 10px;"></i>
+            </a>
+            <a th:href="@{/reports/list}"
+               class="d-inline-flex align-items-center btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+                View Reports
+                <i class="bi-search-heart-fill" style="margin-left: 10px;font-size: 2rem;"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
