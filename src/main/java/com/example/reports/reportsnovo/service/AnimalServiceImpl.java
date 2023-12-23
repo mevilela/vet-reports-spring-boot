@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-@Transactional(readOnly = true)
+@Transactional
 public class AnimalServiceImpl implements AnimalService {
 
     private AnimalRepository animalRepository;
@@ -59,11 +59,9 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    @Transactional
     public void deleteAnimalById(Integer id) {
-
         animalRepository.deleteById(id);
-
     }
+
 
 }

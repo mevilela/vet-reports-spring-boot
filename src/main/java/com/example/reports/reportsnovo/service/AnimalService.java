@@ -18,5 +18,4 @@ public interface AnimalService {
 
     void deleteAnimalById(Integer id);
 
-    // List<Animal> findByClientID(Long id);
 }

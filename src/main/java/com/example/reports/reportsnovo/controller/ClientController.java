@@ -1,5 +1,6 @@
 package com.example.reports.reportsnovo.controller;
 
+import com.example.reports.reportsnovo.model.Animal;
 import com.example.reports.reportsnovo.model.Client;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,8 +37,25 @@ public class ClientController {
         return "clients/details";
     }
 
+    @GetMapping("/create")
+    public String createNewClient(Model model){
+
+        model.addAttribute("client", new Client()); //
+
+        return "clients/create";
+    }
+
+    @PostMapping("/create")
+    public String createNewClient(@ModelAttribute Client client){
+
+        clientService.createNewClient(client);
+
+        return "redirect:/clients/list";
+    }
+
+
     @DeleteMapping("/{id}")
-    public String deleteClient(@PathVariable Integer id){
+    public String deleteClient(@PathVariable Integer id) {
 
         clientService.deleteClientById(id);
 

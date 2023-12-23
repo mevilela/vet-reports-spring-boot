@@ -11,4 +11,6 @@ public interface ClientService {
     Client getClientById(Integer id);
 
     void deleteClientById(Integer id);
+
+    Client createNewClient(Client client);
 }

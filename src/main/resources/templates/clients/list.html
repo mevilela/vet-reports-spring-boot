@@ -26,7 +26,7 @@
 
 </style>
 
-<table class="table table-dark table-hover">">
+<table class="table table-dark table-hover">
     <thead>
     <tr>
         <!-- Colunas da tabela -->
@@ -60,6 +60,8 @@
             <br/>
         </span>
         </td>
+
+
         <!-- Célula para os botões "Details" -->
         <td>
             <span th:each="animal : ${client.getAnimals()}" >
@@ -67,6 +69,7 @@
             <br/>
             </span>
         </td>
+
         <td>
             <form th:action="@{/clients/{id}(id=${client.id})}" method="post">
                 <input type="hidden" name="_method" value="delete"/>
@@ -79,6 +82,7 @@
 <a class="btn btn-secondary" th:href="@{/animals/list}" >Animals</a>
 <a class="btn btn-secondary" th:href="@{/vets/list}" >Vets</a>
 <a class="btn btn-secondary" th:href="@{/reports/list}" >Reports</a>
+<a class="btn btn-success" th:href="@{/animals/create}">Create new animal</a>
 <a class="btn btn-primary" th:href="@{/clients/create}">Create new client</a>
 
 </body>

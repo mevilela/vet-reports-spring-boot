@@ -1,10 +1,12 @@
 package com.example.reports.reportsnovo.controller;
 
 import com.example.reports.reportsnovo.model.Animal;
+import com.example.reports.reportsnovo.model.Client;
 import com.example.reports.reportsnovo.model.Report;
 import com.example.reports.reportsnovo.service.AnimalService;
 import com.example.reports.reportsnovo.service.ClientService;
 import com.example.reports.reportsnovo.service.ReportService;
+import com.example.reports.reportsnovo.service.VetService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -23,11 +25,13 @@ public class ReportController {
 
     private final ClientService clientService;
     private final AnimalService animalService;
+    private final VetService vetService;
 
-    public ReportController(ReportService reportService, ClientService clientService, AnimalService animalService) {
+    public ReportController(ReportService reportService, ClientService clientService, AnimalService animalService, VetService vetService) {
         this.reportService = reportService;
         this.clientService = clientService;
         this.animalService = animalService;
+        this.vetService = vetService;
     }
 
     @GetMapping("/list")
@@ -44,8 +48,9 @@ public class ReportController {
     public String getReportCreateForm(Model model){
 
 
-            model.addAttribute("client", clientService.clientList());
-            model.addAttribute("animal", animalService.animalList());
+            model.addAttribute("clients", clientService.clientList());
+            model.addAttribute("animals", animalService.animalList());
+            model.addAttribute("vets", vetService.vetList());
             model.addAttribute("report", new Report());
 
             return "reports/create";

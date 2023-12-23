@@ -14,11 +14,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional(readOnly = true) //abrir uma transação pois se houver um erro a transação faz rollback automaticamente (rollback "a anotação de rollback so se usa em testes")
+@Transactional //abrir uma transação pois se houver um erro a transação faz rollback automaticamente (rollback "a anotação de rollback so se usa em testes")
 public class ClientServiceImpl implements ClientService{
 
     private final AnimalRepository animalRepository;
-
     private final ClientRepository clientRepository;
     private final ReportRepository reportRepository;
 
@@ -36,6 +35,13 @@ public class ClientServiceImpl implements ClientService{
     }
 
     @Override
+    public Client createNewClient(Client client) {
+
+        return clientRepository.save(client);
+
+    }
+
+    @Override
     public Client getClientById(Integer id) {
 
         Optional<Client> client = clientRepository.findClientById(id);
@@ -46,7 +52,6 @@ public class ClientServiceImpl implements ClientService{
      }
 
     @Override
-    @Transactional
     public void deleteClientById(Integer id) {
 
         Client client = clientRepository.findClientById(id).orElseThrow();
@@ -69,4 +74,6 @@ public class ClientServiceImpl implements ClientService{
 //        clientRepository.deleteById(id);
 
     }
+
+
 }

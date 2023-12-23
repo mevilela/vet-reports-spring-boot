@@ -33,20 +33,28 @@
     <form action="/reports/create" method="post" th:object="${report}">
         <div class="form-group">
             <label for="client">Client:</label>
-            <select id="client" name="client.id" th:field="*{animal.client}" class="form-control">
-                <option th:each="client : ${clients}" th:value="${client}" th:text="${client.fullname}"></option>
+            <select id="client" name="client.id" th:field="*{animal.client}" class="form-control" onchange="loadAnimals()">
+                <option th:each="client : ${clients}" th:value="${client.id}" th:text="${client.getFullName()}"></option>
             </select>
-        </div>
-        <div class="form-group">
+
+       <div class="form-group">
             <label for="animal">Animal:</label>
             <select id="animal" name="animal.id" th:field="*{animal}" class="form-control">
                 <option th:each="animal : ${animals}" th:value="${animal.id}" th:text="${animal.name}"></option>
             </select>
         </div>
 
-        <div class="form-group">
+
+    <div class="form-group">
             <label for="type">Type:</label>
             <input type="text" id="type" name="type" th:field="*{type}" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="vet">Vet:</label>
+            <select id="vet" name="vet.id" th:field="*{vet}" class="form-control">
+                <option th:each="vet : ${vets}" th:value="${vet.getId()}" th:text="${vet.getFullName()}"></option>
+            </select>
         </div>
 
         <div class="form-group">
