@@ -28,7 +28,7 @@ public class Client {
     **orphanRemoval = true: Isso está relacionado à remoção de entidades "órfãs". Quando uma entidade Animal é removida e não está associada a nenhum Client, a configuração orphanRemoval = true instrui o provedor JPA a remover automaticamente a entidade Animal do banco de dados, pois não tem mais uma entidade associada. Isso é útil quando o relacionamento entre Animal e Client é forte e você deseja manter o banco de dados consistente com o modelo de objeto.
 
     */
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
     private List<Animal> animals;
 
     public Client() {

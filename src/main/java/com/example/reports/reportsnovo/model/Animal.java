@@ -2,10 +2,11 @@ package com.example.reports.reportsnovo.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Animal {
+public class Animal implements Serializable {
 
     @Id
     @GeneratedValue
@@ -21,7 +22,7 @@ public class Animal {
     @JoinColumn(name = "clientId")
     private Client client;
 
-    @OneToMany(mappedBy = "animal", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "animal", cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Report> reports;
 
     public Animal(){

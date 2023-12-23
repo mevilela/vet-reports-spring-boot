@@ -29,6 +29,6 @@ public class VetServiceImpl implements VetService {
     @Override
     public void deleteVet(Integer id) {
 
-        vetRepository.deleteAll();
+        vetRepository.deleteById(id);
     }
 }

@@ -1,11 +1,14 @@
 package com.example.reports.reportsnovo.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
-public class Report {
+public class Report implements Serializable {
 
     @Id
     @GeneratedValue
@@ -23,6 +26,7 @@ public class Report {
 
     @ManyToOne
     @JoinColumn(name = "animal_id")  // Nome da coluna que armazena a chave estrangeira em Report
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Animal animal;
 
     public Report(){
