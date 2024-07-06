@@ -10,7 +10,6 @@ Welcome to Vet Reports, your partner in veterinary excellence. Vet Reports is a 
 - **Thymeleaf**: Server-side Java template engine for rendering HTML templates.
 - **H2 Database**: In-memory database for initial development and testing.
 - **Spring Data JPA**: Persistence layer for interacting with databases.
-- **Swagger**: API documentation tool for easy endpoint exploration.
 
 ## Endpoints
 
@@ -63,12 +62,6 @@ Accessing Thymeleaf Templates
 After starting the application, navigate to the following URLs in your browser to access Thymeleaf templates:
 
 - [http://localhost:8080](http://localhost:8080) (Home Page)
-
-Accessing Swagger API Documentation
------------------------
-Swagger API documentation provides interactive documentation for the API endpoints. After starting the application, navigate to the following URL in your browser to access Swagger:
-
-- [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 ## Usage
 Before using the API, make sure to set up the necessary configurations and dependencies.
