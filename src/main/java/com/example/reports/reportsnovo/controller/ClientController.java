@@ -10,7 +10,7 @@ import com.example.reports.reportsnovo.service.ClientService;
 import java.util.List;
 //Controller, Service, Model, Repository
 
-@Controller
+@RestController
 @RequestMapping("/clients")
 public class ClientController {
 
