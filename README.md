@@ -83,7 +83,6 @@ Refer to the provided endpoint documentation for details on each endpoint's func
 Here is screenshots of our application's:
 
 Homepage:
-
 ![Homepage](src/main/resources/images/home.png)
 
 Vets List:
