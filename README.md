@@ -80,7 +80,9 @@ Refer to the provided endpoint documentation for details on each endpoint's func
 
 ## Project Screenshots
 
-Here is a screenshot of our application's homepage:
+Here is screenshots of our application's:
+
+Homepage:
 
 ![Homepage](src/main/resources/images/home.png)
 
