@@ -55,6 +55,8 @@ Welcome to Vet Reports, your partner in veterinary excellence. Vet Reports is a 
 - **No Spring Security**: Currently lacks authentication and authorization mechanisms.
 - **Basic Error Handling**: Limited custom error handling for specific use cases.
 - **Lack of PUT Operations**: PUT operations are currently not implemented for updating resources.
+- **Missing Image Upload Feature**: Currently lacks functionality for uploading images.
+- **No PDF Report Generation**: Currently lacks functionality for generating PDF reports.
 
 
 Accessing Thymeleaf Templates
@@ -75,3 +77,22 @@ Refer to the provided endpoint documentation for details on each endpoint's func
 ### Prerequisites
 - JDK 8 or higher installed
 - Maven 3.x installed
+
+## Project Screenshots
+
+Here is a screenshot of our application's homepage:
+
+![Homepage](src/main/resources/images/home.png)
+
+Vets List:
+![VetsList](src/main/resources/images/vets_list.png)
+
+Clients List:
+![ClientsList](src/main/resources/images/clients_list.png)
+
+Animals List:
+![AnimalsList](src/main/resources/images/animals_list.png)
+
+Reports List:
+![ReportsList](src/main/resources/images/reports_list.png)
+
